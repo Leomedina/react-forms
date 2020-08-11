@@ -12,10 +12,3 @@ describe("Smoke and snapshot tests", function () {
     expect(asFragment()).toMatchSnapshot();
   });
 });
-
-// describe("Functionality of form", function () {
-//   it("should add a new box", function () {
-//     const { queryBy } = render(<BoxList />);
-
-//   });
-// });
