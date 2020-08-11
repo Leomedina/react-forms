@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Smoke and snapshot tests should match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      style="background-color: green; width: 30px; height: 40px;"
+    />
+    <button>
+      X
+    </button>
+    <div
+      style="background-color: black; width: 20px; height: 20px;"
+    />
+    <button>
+      X
+    </button>
+  </div>
+  <form>
+    <p>
+      <label
+        for="color"
+      >
+        color:
+      </label>
+      <input
+        id="color"
+        name="color"
+        value=""
+      />
+    </p>
+    <p>
+      <label
+        for="width"
+      >
+        width:
+      </label>
+      <input
+        id="width"
+        max="100"
+        name="width"
+        type="range"
+        value="50"
+      />
+      <label
+        for="height"
+      >
+        height:
+      </label>
+      <input
+        id="height"
+        max="100"
+        name="height"
+        type="range"
+        value="50"
+      />
+    </p>
+    <button>
+      Add Box
+    </button>
+  </form>
+</DocumentFragment>
+`;
