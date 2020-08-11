@@ -1,24 +1,32 @@
 import React, { useState } from 'react';
-import Box from './Box'
+import { v4 as uuidv4 } from "uuid";
+import Box from './Box';
 import NewBoxForm from './NewBoxForm';
 
 const BoxList = () => {
   const INITIAL_STATE = [
-    { id: 1, width: 30, height: 40, color: "green" },
-    { id: 2, width: 20, height: 20, color: "black" },
+    { id: uuidv4(), width: 30, height: 40, color: "green" },
+    { id: uuidv4(), width: 20, height: 20, color: "black" }
   ];
 
   const [boxes, setBoxes] = useState(INITIAL_STATE);
 
-  const addBox = (color, width, height) => {
+  const addBox = (newBox) => {
     setBoxes(boxes => [
-      ...boxes, { color, width, height }]);
+      ...boxes, { id: uuidv4(), ...newBox }]);
   };
+
+  const removeBox = (id) => {
+    const newArray = boxes.filter(box => box.id !== id);
+    setBoxes(newArray);
+  }
 
   return (
     <>
       <div>
-        {boxes.map(({ id, width, color, height }) => <Box id={id} width={width} height={height} color={color} />)}
+        {boxes.map(({ id, width, color, height }) =>
+          <Box id={id} width={width} height={height} color={color} removeBox={removeBox} />
+        )}
       </div>
       <NewBoxForm addBox={addBox} />
     </>
