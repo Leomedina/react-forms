@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import BoxList from './BoxList';
 
 describe("Smoke and snapshot tests", function () {
@@ -12,3 +12,10 @@ describe("Smoke and snapshot tests", function () {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+
+// describe("Functionality of form", function () {
+//   it("should add a new box", function () {
+//     const { queryBy } = render(<BoxList />);
+
+//   });
+// });
